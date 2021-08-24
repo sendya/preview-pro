@@ -1,0 +1,27 @@
+{
+  "name": "preview-pro",
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "vue-tsc --noEmit && vite build",
+    "serve": "vite preview"
+  },
+  "dependencies": {
+    "@ant-design-vue/pro-layout": "^3.1.0-beta.1",
+    "ant-design-vue": "^2.2.6",
+    "vue": "^3.2.6",
+    "vue-router": "^4.0.11"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^1.6.0",
+    "@vue/compiler-sfc": "^3.0.5",
+    "typescript": "^4.3.2",
+    "vite": "^2.5.1",
+    "vue-tsc": "^0.2.2"
+  },
+  "author": {
+    "email": "18x@loacg.com",
+    "name": "Sendya",
+    "url": "https://github.com/sendya"
+  }
+}
