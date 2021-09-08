@@ -14,8 +14,14 @@ export default createRouter({
         {
           path: '/welcome',
           name: 'welcome',
-          meta: { title: 'Welcome' },
+          meta: { title: 'Welcome', icon: 'SmileOutlined', },
           component: () => import('./views/page1.vue'),
+        },
+        {
+          path: '/version',
+          name: 'version',
+          meta: { title: 'Version', icon: 'SmileOutlined', },
+          component: () => import('./views/detail.vue'),
         }
       ]
     }

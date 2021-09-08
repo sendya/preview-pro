@@ -15,14 +15,32 @@
     </template>
     <template #rightContentRender>
       <div style="margin-right: 12px">
-        <a-avatar
-          shape="square"
-          size="small"
-        >
-          <template #icon>
-            <UserOutlined />
+        <a-dropdown>
+          <template #overlay>
+            <a-menu>
+              <a-menu-item>
+                <template #icon>
+                  <SettingOutlined />
+                </template>
+                <span>个人设置</span>
+              </a-menu-item>
+              <a-menu-item>
+                <template #icon>
+                  <LogoutOutlined />
+                </template>
+                <span>退出登录</span>
+              </a-menu-item>
+            </a-menu>
           </template>
-        </a-avatar>
+          <a-avatar
+            shape="square"
+            size="small"
+          >
+            <template #icon>
+              <UserOutlined />
+            </template>
+          </a-avatar>
+        </a-dropdown>
       </div>
     </template>
     <router-view />
@@ -33,11 +51,22 @@
 import { defineComponent, reactive, watchEffect } from 'vue'
 import { useRouter } from 'vue-router'
 import { getMenuData, clearMenuItem } from '@ant-design-vue/pro-layout'
-import { UserOutlined } from '@ant-design/icons-vue'
+import { Avatar, Dropdown, Menu } from 'ant-design-vue';
+import { UserOutlined, SettingOutlined, LogoutOutlined } from '@ant-design/icons-vue'
 import type { RouteContextProps } from '@ant-design-vue/pro-layout'
 
 export default defineComponent({
-  components: { UserOutlined },
+  components: { 
+    UserOutlined,
+    SettingOutlined,
+    LogoutOutlined,
+
+
+    [Avatar.name]: Avatar,
+    [Dropdown.name]: Dropdown,
+    [Menu.name]: Menu,
+    [Menu.Item.name]: Menu.Item,
+  },
   setup() {
     const router = useRouter()
     const { menuData } = getMenuData(clearMenuItem(router.getRoutes()))
