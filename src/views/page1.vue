@@ -18,8 +18,13 @@
 import { 
   Result as AResult,
   Button as AButton,
+  Select as ASelect,
   message,
 } from 'ant-design-vue';
+const { 
+  Option: ASelectOption,
+  OptGroup: ASelectOptGroup
+} = ASelect;
 
 const handleClick = () => {
   message.info('Button clicked');

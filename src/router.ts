@@ -14,13 +14,13 @@ export default createRouter({
         {
           path: '/welcome',
           name: 'welcome',
-          meta: { title: 'Welcome', icon: 'SmileOutlined', },
+          meta: { title: 'Welcome', icon: 'icon-icon-test', },
           component: () => import('./views/page1.vue'),
         },
         {
           path: '/version',
           name: 'version',
-          meta: { title: 'Version', icon: 'SmileOutlined', },
+          meta: { title: 'Version', icon: 'icon-antdesign', },
           component: () => import('./views/detail.vue'),
         }
       ]

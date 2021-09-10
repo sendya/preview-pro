@@ -5,6 +5,7 @@
     v-model:openKeys="state.openKeys"
     :menuData="menuData"
     :fixSiderbar="true"
+    iconfontUrl="//at.alicdn.com/t/font_2804900_c2k6gsut3fn.js"
     layout="mix"
   >
     <template #menuHeaderRender>
@@ -47,51 +48,32 @@
   </pro-layout>
 </template>
 
-<script lang="ts">
-import { defineComponent, reactive, watchEffect } from 'vue'
+<script setup lang="ts">
+import { reactive, watchEffect } from 'vue'
 import { useRouter } from 'vue-router'
 import { getMenuData, clearMenuItem } from '@ant-design-vue/pro-layout'
-import { Avatar, Dropdown, Menu } from 'ant-design-vue';
+import { Avatar as AAvatar, Dropdown as ADropdown, Menu as AMenu, MenuItem as AMenuItem } from 'ant-design-vue';
 import { UserOutlined, SettingOutlined, LogoutOutlined } from '@ant-design/icons-vue'
 import type { RouteContextProps } from '@ant-design-vue/pro-layout'
 
-export default defineComponent({
-  components: { 
-    UserOutlined,
-    SettingOutlined,
-    LogoutOutlined,
+const router = useRouter()
+const { menuData } = getMenuData(clearMenuItem(router.getRoutes()))
 
+const state = reactive<Omit<RouteContextProps, 'menuData'>>({
+  collapsed: false, // default collapsed
+  openKeys: [], // defualt openKeys
+  selectedKeys: [], // default selectedKeys
+})
 
-    [Avatar.name]: Avatar,
-    [Dropdown.name]: Dropdown,
-    [Menu.name]: Menu,
-    [Menu.Item.name]: Menu.Item,
-  },
-  setup() {
-    const router = useRouter()
-    const { menuData } = getMenuData(clearMenuItem(router.getRoutes()))
-
-    const state = reactive<Omit<RouteContextProps, 'menuData'>>({
-      collapsed: false,
-      openKeys: [],
-      selectedKeys: [],
-    })
-
-    watchEffect(() => {
-      if (router.currentRoute) {
-        const matched = router.currentRoute.value.matched.concat()
-        state.selectedKeys = matched
-          .filter((r) => r.name !== 'index')
-          .map((r) => r.path)
-        state.openKeys = matched
-          .filter((r) => r.path !== router.currentRoute.value.path)
-          .map((r) => r.path)
-      }
-    })
-    return {
-      state,
-      menuData,
-    }
-  },
+watchEffect(() => {
+  if (router.currentRoute) {
+    const matched = router.currentRoute.value.matched.concat()
+    state.selectedKeys = matched
+      .filter((r) => r.name !== 'index')
+      .map((r) => r.path)
+    state.openKeys = matched
+      .filter((r) => r.path !== router.currentRoute.value.path)
+      .map((r) => r.path)
+  }
 })
 </script>
