@@ -9,40 +9,13 @@
     layout="mix"
   >
     <template #menuHeaderRender>
-      <a>
+      <router-link :to="{ path: '/' }">
         <img src="https://alicdn.antdv.com/v2/assets/logo.1ef800a8.svg" />
         <h1>Preview Pro</h1>
-      </a>
+      </router-link>
     </template>
     <template #rightContentRender>
-      <div style="margin-right: 12px">
-        <a-dropdown>
-          <template #overlay>
-            <a-menu>
-              <a-menu-item>
-                <template #icon>
-                  <SettingOutlined />
-                </template>
-                <span>个人设置</span>
-              </a-menu-item>
-              <a-menu-item>
-                <template #icon>
-                  <LogoutOutlined />
-                </template>
-                <span>退出登录</span>
-              </a-menu-item>
-            </a-menu>
-          </template>
-          <a-avatar
-            shape="square"
-            size="small"
-          >
-            <template #icon>
-              <UserOutlined />
-            </template>
-          </a-avatar>
-        </a-dropdown>
-      </div>
+      <RightContent />
     </template>
     <router-view />
   </pro-layout>
@@ -50,10 +23,9 @@
 
 <script setup lang="ts">
 import { reactive, watchEffect } from 'vue'
-import { useRouter } from 'vue-router'
+import { useRouter, RouterLink } from 'vue-router'
 import { getMenuData, clearMenuItem } from '@ant-design-vue/pro-layout'
-import { Avatar as AAvatar, Dropdown as ADropdown, Menu as AMenu, MenuItem as AMenuItem } from 'ant-design-vue';
-import { UserOutlined, SettingOutlined, LogoutOutlined } from '@ant-design/icons-vue'
+import RightContent from '../components/RightContent/index.vue'
 import type { RouteContextProps } from '@ant-design-vue/pro-layout'
 
 const router = useRouter()
@@ -64,6 +36,10 @@ const state = reactive<Omit<RouteContextProps, 'menuData'>>({
   openKeys: [], // defualt openKeys
   selectedKeys: [], // default selectedKeys
 })
+
+const handleMenuClick = (e: any) => {
+  console.log('MenuClick', e);
+}
 
 watchEffect(() => {
   if (router.currentRoute) {
