@@ -15,18 +15,11 @@
 </template>
 
 <script lang="ts" setup>
-import { 
-  Result as AResult,
-  Button as AButton,
-  Select as ASelect,
-  message,
-} from 'ant-design-vue';
-const { 
-  Option: ASelectOption,
-  OptGroup: ASelectOptGroup
-} = ASelect;
+import 'ant-design-vue/es/message/style';
+import { message } from 'ant-design-vue';
 
 const handleClick = () => {
-  message.info('Button clicked');
+  console.log('info')
+  message.info('BackHome button clicked!')
 }
 </script>

@@ -16,7 +16,10 @@
   "devDependencies": {
     "@vitejs/plugin-vue": "^1.6.0",
     "@vue/compiler-sfc": "^3.2.19",
+    "less": "^4.1.2",
     "typescript": "^4.3.2",
+    "unplugin-auto-import": "^0.4.10",
+    "unplugin-vue-components": "^0.15.6",
     "vite": "^2.5.5",
     "vue-tsc": "^0.3.0"
   },

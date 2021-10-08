@@ -30,6 +30,5 @@
 </template>
 
 <script setup lang="ts">
-import { Avatar as AAvatar, Dropdown as ADropdown, Menu as AMenu, MenuItem as AMenuItem } from 'ant-design-vue';
 import { UserOutlined, SettingOutlined, LogoutOutlined } from '@ant-design/icons-vue';
 </script>
