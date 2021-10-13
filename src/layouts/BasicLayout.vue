@@ -6,7 +6,7 @@
     :menuData="menuData"
     :fixSiderbar="true"
     iconfontUrl="//at.alicdn.com/t/font_2804900_c2k6gsut3fn.js"
-    layout="mix"
+    layout="top"
   >
     <template #menuHeaderRender>
       <router-link :to="{ path: '/' }">
