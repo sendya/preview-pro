@@ -61,7 +61,7 @@ jobs:
           key: node_modules-${{ hashFiles('**/package-temp-dir/package-lock.json') }}
 
       - name: build
-        run: npm run predeploy
+        run: npm run build
 
       - name: deploy
         uses: peaceiris/actions-gh-pages@v3
