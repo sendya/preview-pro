@@ -5,10 +5,9 @@ import AutoImport from 'unplugin-auto-import/vite'
 import Components from 'unplugin-vue-components/vite'
 import { AntDesignVueResolver } from 'unplugin-vue-components/resolvers'
 
-console.log('dependencies', JSON.stringify(pkg.dependencies))
-
 // https://vitejs.dev/config/
 export default defineConfig({
+  base: './', // by default  please remove this line 
   define: {
     PKG: JSON.stringify(pkg.dependencies),
   },
