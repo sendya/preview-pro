@@ -10,7 +10,7 @@ on:
 jobs:
   setup:
     runs-on: ubuntu-latest
-    if: github.event.ref_type == 'tag' && (contains(github.event.ref, '-') == false)
+#    if: github.event.ref_type == 'tag' && (contains(github.event.ref, '-') == false)
     steps:
       - name: checkout
         uses: actions/checkout@master
