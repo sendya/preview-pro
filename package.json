@@ -4,7 +4,7 @@
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc --noEmit && vite build",
-    "build:ghpages": "vue-tsc --noEmit && vite build --mode=ghpages",
+    "build:ghpages": "vue-tsc --noEmit && vite build --base=/preview-pro/ --mode=ghpages",
     "serve": "vite preview"
   },
   "dependencies": {
