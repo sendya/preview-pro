@@ -1,8 +1,10 @@
-import { createRouter, createWebHistory } from 'vue-router';
+import { createRouter, createWebHistory, createWebHashHistory } from 'vue-router';
 import BasicLayout from './layouts/BasicLayout.vue';
 
+const hasGithubPages = import.meta.env.VITE_GHPAGES
+
 export default createRouter({
-  history: createWebHistory(),
+  history: hasGithubPages ? createWebHashHistory() : createWebHistory(),
   routes: [
     {
       path: '/',
