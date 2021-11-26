@@ -3,11 +3,11 @@
     v-model:collapsed="state.collapsed"
     v-model:selectedKeys="state.selectedKeys"
     v-model:openKeys="state.openKeys"
-    :menuData="menuData"
+    :menu-data="menuData"
     :breadcrumb="{ routes: breadcrumb }"
-    :fixSiderbar="true"
-    iconfontUrl="//at.alicdn.com/t/font_2804900_c2k6gsut3fn.js"
-    layout="top"
+    :fix-siderbar="true"
+    iconfont-url="//at.alicdn.com/t/font_2804900_c2k6gsut3fn.js"
+    v-bind="proConfig"
   >
     <template #menuHeaderRender>
       <router-link :to="{ path: '/' }">
@@ -21,33 +21,41 @@
     <!-- custom breadcrumb itemRender  -->
     <template #breadcrumbRender="{ route, params, routes }">
       <span v-if="routes.indexOf(route) === routes.length - 1">
-        <HeartOutlined /> {{ route.breadcrumbName }}
+        <HeartOutlined />
+        {{ route.breadcrumbName }}
       </span>
       <router-link v-else :to="{ path: route.path, params }">
-        <SmileOutlined /> {{ route.breadcrumbName }}
+        <SmileOutlined />
+        {{ route.breadcrumbName }}
       </router-link>
     </template>
-
+    <setting-drawer v-model="proConfig" />
     <router-view />
   </pro-layout>
 </template>
 
 <script setup lang="ts">
-import { reactive, watchEffect, computed } from 'vue'
-import { useRouter, RouterLink } from 'vue-router'
-import { getMenuData, clearMenuItem } from '@ant-design-vue/pro-layout'
-import RightContent from '../components/RightContent/index.vue'
-import type { RouteContextProps } from '@ant-design-vue/pro-layout'
-import { SmileOutlined, HeartOutlined } from '@ant-design/icons-vue'
+import { reactive, watchEffect, computed } from 'vue';
+import { useRouter, RouterLink } from 'vue-router';
+import { getMenuData, clearMenuItem } from '@ant-design-vue/pro-layout';
+import type { RouteContextProps } from '@ant-design-vue/pro-layout';
+import { SmileOutlined, HeartOutlined } from '@ant-design/icons-vue';
+import RightContent from '../components/RightContent/index.vue';
 
-const router = useRouter()
-const { menuData } = getMenuData(clearMenuItem(router.getRoutes()))
+const router = useRouter();
+const { menuData } = getMenuData(clearMenuItem(router.getRoutes()));
 
 const state = reactive<Omit<RouteContextProps, 'menuData'>>({
   collapsed: false, // default collapsed
   openKeys: [], // defualt openKeys
   selectedKeys: [], // default selectedKeys
-})
+});
+const proConfig = ref({
+  layout: 'top',
+  fixedHeader: false,
+  fixSiderbar: false,
+  splitMenus: false,
+});
 const breadcrumb = computed(() =>
   router.currentRoute.value.matched.concat().map(item => {
     return {
@@ -56,19 +64,14 @@ const breadcrumb = computed(() =>
     };
   }),
 );
-const handleMenuClick = (e: any) => {
-  console.log('MenuClick', e);
-}
 
 watchEffect(() => {
   if (router.currentRoute) {
-    const matched = router.currentRoute.value.matched.concat()
-    state.selectedKeys = matched
-      .filter((r) => r.name !== 'index')
-      .map((r) => r.path)
+    const matched = router.currentRoute.value.matched.concat();
+    state.selectedKeys = matched.filter(r => r.name !== 'index').map(r => r.path);
     state.openKeys = matched
-      .filter((r) => r.path !== router.currentRoute.value.path)
-      .map((r) => r.path)
+      .filter(r => r.path !== router.currentRoute.value.path)
+      .map(r => r.path);
   }
-})
+});
 </script>

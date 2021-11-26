@@ -15,9 +15,10 @@
     </template>
     <a-card title="Project Version">
       <p v-for="(dep, key) in projectPkgs" :key="key">
-        <strong style="margin-right: 12px">{{ key }}:</strong><a-tag>{{ dep }}</a-tag>
+        <strong style="margin-right: 12px">{{ key }}:</strong>
+        <a-tag>{{ dep }}</a-tag>
       </p>
-      <p v-for="d in new Array(50)">text block...</p>
+      <p v-for="d in new Array(50)" :key="d">text block...</p>
     </a-card>
   </page-container>
 </template>

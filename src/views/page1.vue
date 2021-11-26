@@ -19,7 +19,7 @@ import 'ant-design-vue/es/message/style';
 import { message } from 'ant-design-vue';
 
 const handleClick = () => {
-  console.log('info')
-  message.info('BackHome button clicked!')
-}
+  console.log('info');
+  message.info('BackHome button clicked!');
+};
 </script>

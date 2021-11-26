@@ -12,8 +12,8 @@ export default defineConfig({
   },
   plugins: [
     vue(),
-    AutoImport({ 
-      imports: 'vue',
+    AutoImport({
+      imports: ['vue', 'vue-router'],
     }),
     Components({
       dts: true,
@@ -30,7 +30,13 @@ export default defineConfig({
       less: {
         // DO NOT REMOVE THIS LINE
         javascriptEnabled: true,
+        modifyVars: {
+          hack: `true; @import 'ant-design-vue/es/style/themes/default.less'`, // dark.less
+        }
       },
     },
+  },
+  optimizeDeps: {
+    include: ['@ant-design/icons-vue', 'ant-design-vue/es'],
   },
 })
