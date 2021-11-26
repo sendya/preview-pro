@@ -5,7 +5,6 @@
     v-model:openKeys="state.openKeys"
     :menu-data="menuData"
     :breadcrumb="{ routes: breadcrumb }"
-    :fix-siderbar="true"
     iconfont-url="//at.alicdn.com/t/font_2804900_c2k6gsut3fn.js"
     v-bind="proConfig"
   >
