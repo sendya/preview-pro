@@ -20,8 +20,8 @@ declare module 'vue' {
     ARow: typeof import('ant-design-vue/es')['Row']
     ASwitch: typeof import('ant-design-vue/es')['Switch']
     ATag: typeof import('ant-design-vue/es')['Tag']
-    RightContent: typeof import('./src/components/RightContent/index.vue')['default']
-    SettingDrawer: typeof import('./src/components/SettingDrawer/index.vue')['default']
+    RightContent: typeof import('./components/RightContent/index.vue')['default']
+    SettingDrawer: typeof import('./components/SettingDrawer/index.vue')['default']
   }
 }
 

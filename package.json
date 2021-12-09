@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "dev": "vite",
+    "dev:force": "vite --force",
     "build": "vue-tsc --noEmit && vite build",
     "build:ghpages": "vue-tsc --noEmit && vite build --base=/preview-pro/ --mode=ghpages",
     "serve": "vite preview",
@@ -31,8 +32,8 @@
     "less": "^4.1.2",
     "prettier": "^2.5.0",
     "typescript": "^4.5.2",
-    "unplugin-auto-import": "^0.4.18",
-    "unplugin-vue-components": "^0.17.2",
+    "unplugin-auto-import": "^0.5.3",
+    "unplugin-vue-components": "^0.17.6",
     "vite": "^2.6.14",
     "vue-tsc": "^0.3.0"
   },

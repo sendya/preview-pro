@@ -17,8 +17,8 @@ specifiers:
   less: ^4.1.2
   prettier: ^2.5.0
   typescript: ^4.5.2
-  unplugin-auto-import: ^0.4.18
-  unplugin-vue-components: ^0.17.2
+  unplugin-auto-import: ^0.5.3
+  unplugin-vue-components: ^0.17.6
   vite: ^2.6.14
   vue: ^3.2.22
   vue-router: ^4.0.11
@@ -45,8 +45,8 @@ devDependencies:
   less: 4.1.2
   prettier: 2.5.0
   typescript: 4.5.2
-  unplugin-auto-import: 0.4.18_vite@2.6.14
-  unplugin-vue-components: 0.17.2_vite@2.6.14+vue@3.2.22
+  unplugin-auto-import: 0.5.3_vite@2.6.14
+  unplugin-vue-components: 0.17.6_vite@2.6.14+vue@3.2.22
   vite: 2.6.14_less@4.1.2
   vue-tsc: 0.3.0_typescript@4.5.2
 
@@ -1724,12 +1724,6 @@ packages:
       type-check: 0.4.0
     dev: true
 
-  /local-pkg/0.1.0:
-    resolution: {integrity: sha512-WsR2tHvRGIxcC2clC30ECb5fjywzsjQagaHIy1+ykZaHz0ByoB0OL2riHqIYA5YYnensRXLszwbzHkhKzehZDg==}
-    dependencies:
-      mlly: 0.2.10
-    dev: true
-
   /local-pkg/0.4.0:
     resolution: {integrity: sha512-2XBWjO/v63JeR1HPzLJxdTVRQDB84Av2p2KtBA5ahvpyLUPubcAU6iXlAJrONcY7aSqgJhXxElAnKtnYsRolPQ==}
     engines: {node: '>=14'}
@@ -2399,8 +2393,8 @@ packages:
       which-boxed-primitive: 1.0.2
     dev: true
 
-  /unplugin-auto-import/0.4.18_vite@2.6.14:
-    resolution: {integrity: sha512-cbb6uuNo07ZyeaTQtFChDWxpApZC5z9aKBCR2SxLzJ8JYY70kDuS9MFOCfRB+v96rLbtenjdsgBlErYGqA+9zQ==}
+  /unplugin-auto-import/0.5.3_vite@2.6.14:
+    resolution: {integrity: sha512-jXs0rnKTS+/TyXOild6RkVp73yz1DeLXVJWR6VRn+oageEsvHgW6zofvc2BmpAm/pTSANxZ48kLi12wOa/iwdw==}
     engines: {node: '>=14'}
     peerDependencies:
       '@vueuse/core': '*'
@@ -2420,8 +2414,8 @@ packages:
       - webpack
     dev: true
 
-  /unplugin-vue-components/0.17.2_vite@2.6.14+vue@3.2.22:
-    resolution: {integrity: sha512-e4ZdOpnzFMQJx3rDLotLyucTap0bUlMy+6BRYyoN6jE1ZyGAgR6jodmpHZAPR3xkC4pkqW5PLlyDfIH/+lzkng==}
+  /unplugin-vue-components/0.17.6_vite@2.6.14+vue@3.2.22:
+    resolution: {integrity: sha512-Z2XvwKeY7/++MucRKzJihDsbdL8rFb71VfmuhtMtLE8zurjFu57XKFx0RNFUD5zD4g0HEyR9GGTwXu2YI0rang==}
     engines: {node: '>=14'}
     peerDependencies:
       '@babel/parser': ^7.15.8
@@ -2438,7 +2432,7 @@ packages:
       chokidar: 3.5.2
       debug: 4.3.2
       fast-glob: 3.2.7
-      local-pkg: 0.1.0
+      local-pkg: 0.4.0
       magic-string: 0.25.7
       minimatch: 3.0.4
       resolve: 1.20.0

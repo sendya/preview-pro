@@ -13,19 +13,23 @@ export default defineConfig({
   plugins: [
     vue(),
     AutoImport({
+      dts: 'src/auto-imports.d.ts',
       imports: ['vue', 'vue-router'],
     }),
     Components({
-      dts: true,
+      dts: 'src/components.d.ts',
+      deep: true,
+      dirs: ['src/components'],
+      extensions: ['vue', 'tsx'],
       resolvers: [
         AntDesignVueResolver({
           importStyle: 'less',
+          importLess: true,
         }),
-      ]
-    }),
+      ],
+    })
   ],
   css: {
-    postcss: {},
     preprocessorOptions: {
       less: {
         // DO NOT REMOVE THIS LINE
@@ -37,6 +41,6 @@ export default defineConfig({
     },
   },
   optimizeDeps: {
-    include: ['@ant-design/icons-vue', 'ant-design-vue/es'],
+    include: ['@ant-design/icons-vue', 'ant-design-vue'],
   },
 })
