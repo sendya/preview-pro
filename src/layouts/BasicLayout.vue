@@ -5,7 +5,7 @@
     v-model:openKeys="state.openKeys"
     :menu-data="menuData"
     :breadcrumb="{ routes: breadcrumb }"
-    iconfont-url="//at.alicdn.com/t/font_2804900_c2k6gsut3fn.js"
+    iconfont-url="//at.alicdn.com/t/font_2804900_2sp8hxw3ln8.js"
     v-bind="proConfig"
   >
     <template #menuHeaderRender>
@@ -30,13 +30,22 @@
     </template>
     <setting-drawer v-model="proConfig" />
     <router-view />
+    <template #footerRender>
+      <GlobalFooter
+        :links="[
+          { title: 'Github', href: 'https://github.com/sendya/preview-pro' },
+          { title: 'Ant Design Vue', href: 'https://2x.antdv.com' },
+        ]"
+        copyright="2021 &copy; Sendya"
+      />
+    </template>
   </pro-layout>
 </template>
 
 <script setup lang="ts">
 import { reactive, watchEffect, computed } from 'vue';
 import { useRouter, RouterLink } from 'vue-router';
-import { getMenuData, clearMenuItem } from '@ant-design-vue/pro-layout';
+import { GlobalFooter, getMenuData, clearMenuItem } from '@ant-design-vue/pro-layout';
 import type { RouteContextProps } from '@ant-design-vue/pro-layout';
 import { SmileOutlined, HeartOutlined } from '@ant-design/icons-vue';
 import RightContent from '../components/RightContent/index.vue';
@@ -50,10 +59,14 @@ const state = reactive<Omit<RouteContextProps, 'menuData'>>({
   selectedKeys: [], // default selectedKeys
 });
 const proConfig = ref({
-  layout: 'top',
+  layout: 'mix',
   fixedHeader: false,
   fixSiderbar: false,
   splitMenus: false,
+
+  menuHeaderRender: undefined,
+  footerRender: undefined,
+  headerRender: undefined,
 });
 const breadcrumb = computed(() =>
   router.currentRoute.value.matched.concat().map(item => {
@@ -66,6 +79,7 @@ const breadcrumb = computed(() =>
 
 watchEffect(() => {
   if (router.currentRoute) {
+    console.log('router', router.currentRoute.value);
     const matched = router.currentRoute.value.matched.concat();
     state.selectedKeys = matched.filter(r => r.name !== 'index').map(r => r.path);
     state.openKeys = matched

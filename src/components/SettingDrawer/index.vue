@@ -8,7 +8,10 @@
     </template>
     <div class="margin-bottom: 24px">
       <h3>导航模式</h3>
-      <a-radio-group :value="modelValue.layout" @change="handleLayout">
+      <a-radio-group
+        :value="modelValue.layout"
+        @change="({ target }: { target: HTMLInputElement }) => updateConf(target.value, 'layout')"
+      >
         <a-radio value="side">左侧菜单布局</a-radio>
         <a-radio value="top">顶部菜单布局</a-radio>
         <a-radio value="mix">混合菜单布局</a-radio>
@@ -21,7 +24,7 @@
             checked-children="开"
             un-checked-children="关"
             :checked="modelValue.fixedHeader"
-            @change="handleFixedHeader"
+            @change="(checked: boolean) => updateConf(checked, 'fixedHeader')"
           />
         </a-col>
       </a-row>
@@ -32,7 +35,7 @@
             checked-children="开"
             un-checked-children="关"
             :checked="modelValue.fixSiderbar"
-            @change="handleFixSiderbar"
+            @change="(checked: boolean) => updateConf(checked, 'fixSiderbar')"
           />
         </a-col>
       </a-row>
@@ -43,7 +46,55 @@
             checked-children="开"
             un-checked-children="关"
             :checked="modelValue.splitMenus"
-            @change="handleSplitMenus"
+            @change="(checked: boolean) => updateConf(checked, 'splitMenus')"
+          />
+        </a-col>
+      </a-row>
+
+      <a-divider />
+      <h3>内容区域</h3>
+      <a-row style="margin-bottom: 12px">
+        <a-col :span="12">顶栏</a-col>
+        <a-col :span="12" style="text-align: right">
+          <a-switch
+            checked-children="开"
+            un-checked-children="关"
+            :checked="modelValue.headerRender === undefined"
+            @change="(checked: boolean) => updateConf(checked === true && undefined, 'headerRender')"
+          />
+        </a-col>
+      </a-row>
+      <a-row style="margin-bottom: 12px">
+        <a-col :span="12">页脚</a-col>
+        <a-col :span="12" style="text-align: right">
+          <a-switch
+            checked-children="开"
+            un-checked-children="关"
+            :checked="modelValue.footerRender === undefined"
+            @change="(checked: boolean) => updateConf(checked === true && undefined, 'footerRender')"
+          />
+        </a-col>
+      </a-row>
+      <a-row style="margin-bottom: 12px">
+        <a-col :span="12">菜单</a-col>
+        <a-col :span="12" style="text-align: right">
+          <a-switch
+            disabled
+            checked-children="开"
+            un-checked-children="关"
+            :checked="modelValue.menu === undefined"
+            @change="(checked: boolean) => updateConf(checked === true && undefined, 'menu')"
+          />
+        </a-col>
+      </a-row>
+      <a-row style="margin-bottom: 12px">
+        <a-col :span="12">菜单头</a-col>
+        <a-col :span="12" style="text-align: right">
+          <a-switch
+            checked-children="开"
+            un-checked-children="关"
+            :checked="modelValue.menuHeaderRender === undefined"
+            @change="(checked: boolean) => updateConf(checked === true && undefined, 'menuHeaderRender')"
           />
         </a-col>
       </a-row>
@@ -54,39 +105,25 @@
 <script setup lang="ts">
 import { SettingOutlined, CloseOutlined } from '@ant-design/icons-vue';
 
+type ConfType = 'layout' | 'fixedHeader' | 'fixSiderbar' | string;
+
 const props = defineProps<{
   modelValue: Record<string, any>;
 }>();
 const emit = defineEmits(['update:modelValue']);
 
-const visible = ref<boolean>(true);
+const visible = ref<boolean>(false);
 const handleShowDrawer = () => {
   visible.value = !visible.value;
 };
 
-const handleLayout = (e: Event) => {
-  emit('update:modelValue', {
+const updateConf = (val: any, type: ConfType) => {
+  const newVal = {
     ...toRaw(props.modelValue),
-    layout: (e.target as HTMLInputElement).value,
-  });
-};
-const handleFixedHeader = (checked: boolean) => {
-  emit('update:modelValue', {
-    ...toRaw(props.modelValue),
-    fixedHeader: checked,
-  });
-};
-const handleFixSiderbar = (checked: boolean) => {
-  emit('update:modelValue', {
-    ...toRaw(props.modelValue),
-    fixSiderbar: checked,
-  });
-};
-const handleSplitMenus = (checked: boolean) => {
-  emit('update:modelValue', {
-    ...toRaw(props.modelValue),
-    splitMenus: checked,
-  });
+    [`${type}`]: val,
+  };
+  console.log('newConf', newVal);
+  emit('update:modelValue', newVal);
 };
 </script>
 

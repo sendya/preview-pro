@@ -1,7 +1,7 @@
 lockfileVersion: 5.3
 
 specifiers:
-  '@ant-design-vue/pro-layout': ^3.1.6
+  '@ant-design-vue/pro-layout': ^3.1.7
   '@ant-design/icons-vue': ^6.0.1
   '@typescript-eslint/eslint-plugin': ^5.4.0
   '@typescript-eslint/parser': ^5.4.0
@@ -20,12 +20,14 @@ specifiers:
   unplugin-auto-import: ^0.5.3
   unplugin-vue-components: ^0.17.6
   vite: ^2.6.14
+  vite-plugin-optimize-persist: ^0.1.1
+  vite-plugin-package-config: ^0.1.0
   vue: ^3.2.22
   vue-router: ^4.0.11
   vue-tsc: ^0.3.0
 
 dependencies:
-  '@ant-design-vue/pro-layout': 3.1.6_@vue+compiler-sfc@3.2.22
+  '@ant-design-vue/pro-layout': 3.1.7_@vue+compiler-sfc@3.2.22
   '@ant-design/icons-vue': 6.0.1_vue@3.2.22
   ant-design-vue: 2.2.8_d993d7eb47a5c30940fe6565e4c82216
   vue: 3.2.22
@@ -48,12 +50,14 @@ devDependencies:
   unplugin-auto-import: 0.5.3_vite@2.6.14
   unplugin-vue-components: 0.17.6_vite@2.6.14+vue@3.2.22
   vite: 2.6.14_less@4.1.2
+  vite-plugin-optimize-persist: 0.1.1_137bb6467610b990f16065d9a46cbcdc
+  vite-plugin-package-config: 0.1.0_vite@2.6.14
   vue-tsc: 0.3.0_typescript@4.5.2
 
 packages:
 
-  /@ant-design-vue/pro-layout/3.1.6_@vue+compiler-sfc@3.2.22:
-    resolution: {integrity: sha512-9LY/kX2SKWImWhgTiUUf8elWEhJrUdQQ2mVNC0QmOlFH5E2LS1NH1nAWa1DXy4X5L2/h1vcL1zFkJoGaKc0bgQ==}
+  /@ant-design-vue/pro-layout/3.1.7_@vue+compiler-sfc@3.2.22:
+    resolution: {integrity: sha512-nNq4DKgnZJr8fTvw/UVsg65+PnelYLRhuWCDIDZosXE+Dcfe24WD29n4Efi2GurebYYWgE6TAHt9FFWf/Xp6CQ==}
     dependencies:
       ant-design-vue: 2.2.8_d993d7eb47a5c30940fe6565e4c82216
       lodash-es: 4.17.21
@@ -144,7 +148,7 @@ packages:
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     dependencies:
       ajv: 6.12.6
-      debug: 4.3.2
+      debug: 4.3.3
       espree: 9.1.0
       globals: 13.12.0
       ignore: 4.0.6
@@ -161,7 +165,7 @@ packages:
     engines: {node: '>=10.10.0'}
     dependencies:
       '@humanwhocodes/object-schema': 1.2.1
-      debug: 4.3.2
+      debug: 4.3.3
       minimatch: 3.0.4
     transitivePeerDependencies:
       - supports-color
@@ -311,7 +315,7 @@ packages:
     dependencies:
       '@typescript-eslint/types': 5.4.0
       '@typescript-eslint/visitor-keys': 5.4.0
-      debug: 4.3.2
+      debug: 4.3.3
       globby: 11.0.4
       is-glob: 4.0.3
       semver: 7.3.5
@@ -736,6 +740,18 @@ packages:
 
   /debug/4.3.2:
     resolution: {integrity: sha512-mOp8wKcvj7XxC78zLgw/ZA+6TSgkoE2C/ienthhRD298T7UNwAg9diBpLRxC0mOezLl4B0xV7M0cCO6P/O0Xhw==}
+    engines: {node: '>=6.0'}
+    peerDependencies:
+      supports-color: '*'
+    peerDependenciesMeta:
+      supports-color:
+        optional: true
+    dependencies:
+      ms: 2.1.2
+    dev: true
+
+  /debug/4.3.3:
+    resolution: {integrity: sha512-/zxw5+vh1Tfv+4Qn7a5nsbcJKPaSvCDhojn6FEl9vupwK2VCSDtEiEtqr8DFtzYFOdz63LBkxec7DYuc2jon6Q==}
     engines: {node: '>=6.0'}
     peerDependencies:
       supports-color: '*'
@@ -1336,6 +1352,15 @@ packages:
     resolution: {integrity: sha512-8/sOawo8tJ4QOBX8YlQBMxL8+RLZfxMQOif9o0KUKTNTjMYElWPE0r/m5VNFxTRd0NSw8qSy8dajrwX4RYI1Hw==}
     dev: true
 
+  /fs-extra/10.0.0:
+    resolution: {integrity: sha512-C5owb14u9eJwizKGdchcDUQeFtlSHHthBk8pbX9Vc1PFZrLombudjDnNns88aYslCyF6IY5SUw3Roz6xShcEIQ==}
+    engines: {node: '>=12'}
+    dependencies:
+      graceful-fs: 4.2.8
+      jsonfile: 6.1.0
+      universalify: 2.0.0
+    dev: true
+
   /fs.realpath/1.0.0:
     resolution: {integrity: sha1-FQStJSMVjKpA20onh8sBQRmU6k8=}
     dev: true
@@ -1420,7 +1445,6 @@ packages:
     resolution: {integrity: sha512-qkIilPUYcNhJpd33n0GBXTB1MMPp14TxEsEs0pTrsSVucApsYzW5V+Q8Qxhik6KU3evy+qkAAowTByymK0avdg==}
     requiresBuild: true
     dev: true
-    optional: true
 
   /has-bigints/1.0.1:
     resolution: {integrity: sha512-LSBS2LjbNBTf6287JEbEzvJgftkF5qFkmCo9hDRpAzKhUOlJ+hx8dd4USs00SgsUNwc4617J9ki5YtEClM2ffA==}
@@ -1689,6 +1713,14 @@ packages:
 
   /jsonc-parser/3.0.0:
     resolution: {integrity: sha512-fQzRfAbIBnR0IQvftw9FJveWiHp72Fg20giDrHz6TdfB12UH/uue0D3hm57UB5KgAVuniLMCaS8P1IMj9NR7cA==}
+    dev: true
+
+  /jsonfile/6.1.0:
+    resolution: {integrity: sha512-5dgndWOriYSm5cnYaJNhalLNDKOqFwyDB/rr1E9ZsGciGvKPs8R2xYGCacuf3z6K1YKDz182fd+fY3cn3pMqXQ==}
+    dependencies:
+      universalify: 2.0.0
+    optionalDependencies:
+      graceful-fs: 4.2.8
     dev: true
 
   /jstransformer/1.0.0:
@@ -2393,6 +2425,11 @@ packages:
       which-boxed-primitive: 1.0.2
     dev: true
 
+  /universalify/2.0.0:
+    resolution: {integrity: sha512-hAZsKq7Yy11Zu1DE0OzWjw7nnLZmJZYTDZZyEFHZdUhV8FkH5MCfoU1XMaxXovpyW5nq5scPqq0ZDP9Zyl04oQ==}
+    engines: {node: '>= 10.0.0'}
+    dev: true
+
   /unplugin-auto-import/0.5.3_vite@2.6.14:
     resolution: {integrity: sha512-jXs0rnKTS+/TyXOild6RkVp73yz1DeLXVJWR6VRn+oageEsvHgW6zofvc2BmpAm/pTSANxZ48kLi12wOa/iwdw==}
     engines: {node: '>=14'}
@@ -2476,6 +2513,31 @@ packages:
 
   /v8-compile-cache/2.3.0:
     resolution: {integrity: sha512-l8lCEmLcLYZh4nbunNZvQCJc5pv7+RCwa8q/LdUx8u7lsWvPDKmpodJAJNwkAhJC//dFY48KuIEmjtd4RViDrA==}
+    dev: true
+
+  /vite-plugin-optimize-persist/0.1.1_137bb6467610b990f16065d9a46cbcdc:
+    resolution: {integrity: sha512-f7/8P16OgLNYrEgJVzIhd9d7KK8vFrLIKgpxM6o1820Qp3CiybiB/kwmQOFAqI9tOyFAhDJDe/4Qka+JRIiTdw==}
+    peerDependencies:
+      vite: ^2.0.0
+      vite-plugin-package-config: ^0.1.0
+    dependencies:
+      debug: 4.3.2
+      fs-extra: 10.0.0
+      vite: 2.6.14_less@4.1.2
+      vite-plugin-package-config: 0.1.0_vite@2.6.14
+    transitivePeerDependencies:
+      - supports-color
+    dev: true
+
+  /vite-plugin-package-config/0.1.0_vite@2.6.14:
+    resolution: {integrity: sha512-cnj/PiugW8EJIaDaorSygKL85GqdLz/oLg031YD0/tF1wiGGz3jkrpkUvZauDqJmR7vpLGnP+zVxQvmXbXjIXQ==}
+    peerDependencies:
+      vite: ^2.0.0
+    dependencies:
+      debug: 4.3.3
+      vite: 2.6.14_less@4.1.2
+    transitivePeerDependencies:
+      - supports-color
     dev: true
 
   /vite/2.6.14_less@4.1.2:
@@ -2630,7 +2692,7 @@ packages:
     peerDependencies:
       eslint: '>=6.0.0'
     dependencies:
-      debug: 4.3.2
+      debug: 4.3.3
       eslint: 8.3.0
       eslint-scope: 6.0.0
       eslint-visitor-keys: 3.1.0

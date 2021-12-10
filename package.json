@@ -12,7 +12,7 @@
     "prettier": "prettier -c --write 'src/**/*'"
   },
   "dependencies": {
-    "@ant-design-vue/pro-layout": "^3.1.6",
+    "@ant-design-vue/pro-layout": "^3.1.7",
     "@ant-design/icons-vue": "^6.0.1",
     "ant-design-vue": "^2.2.8",
     "vue": "^3.2.22",
@@ -35,11 +35,42 @@
     "unplugin-auto-import": "^0.5.3",
     "unplugin-vue-components": "^0.17.6",
     "vite": "^2.6.14",
+    "vite-plugin-optimize-persist": "^0.1.1",
+    "vite-plugin-package-config": "^0.1.0",
     "vue-tsc": "^0.3.0"
   },
   "author": {
     "email": "18x@loacg.com",
     "name": "Sendya",
     "url": "https://github.com/sendya"
+  },
+  "vite": {
+    "optimizeDeps": {
+      "include": [
+        "@ant-design-vue/pro-layout",
+        "ant-design-vue/es",
+        "ant-design-vue/es/avatar/style",
+        "ant-design-vue/es/button/style",
+        "ant-design-vue/es/card/style",
+        "ant-design-vue/es/col/style",
+        "ant-design-vue/es/config-provider/style",
+        "ant-design-vue/es/descriptions/style",
+        "ant-design-vue/es/divider/style",
+        "ant-design-vue/es/drawer/style",
+        "ant-design-vue/es/dropdown/style",
+        "ant-design-vue/es/menu/style",
+        "ant-design-vue/es/message/style",
+        "ant-design-vue/es/radio/style",
+        "ant-design-vue/es/result/style",
+        "ant-design-vue/es/row/style",
+        "ant-design-vue/es/space/style",
+        "ant-design-vue/es/statistic/style",
+        "ant-design-vue/es/style",
+        "ant-design-vue/es/switch/style",
+        "ant-design-vue/es/tag/style",
+        "vue",
+        "vue-router"
+      ]
+    }
   }
 }
