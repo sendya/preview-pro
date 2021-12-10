@@ -24,7 +24,7 @@
             checked-children="开"
             un-checked-children="关"
             :checked="modelValue.fixedHeader"
-            @change="(checked: boolean) => updateConf(checked, 'fixedHeader')"
+            @change="(checked: CheckedType) => updateConf(checked, 'fixedHeader')"
           />
         </a-col>
       </a-row>
@@ -35,7 +35,7 @@
             checked-children="开"
             un-checked-children="关"
             :checked="modelValue.fixSiderbar"
-            @change="(checked: boolean) => updateConf(checked, 'fixSiderbar')"
+            @change="(checked: CheckedType) => updateConf(checked, 'fixSiderbar')"
           />
         </a-col>
       </a-row>
@@ -46,7 +46,7 @@
             checked-children="开"
             un-checked-children="关"
             :checked="modelValue.splitMenus"
-            @change="(checked: boolean) => updateConf(checked, 'splitMenus')"
+            @change="(checked: CheckedType) => updateConf(checked, 'splitMenus')"
           />
         </a-col>
       </a-row>
@@ -60,7 +60,7 @@
             checked-children="开"
             un-checked-children="关"
             :checked="modelValue.headerRender === undefined"
-            @change="(checked: boolean) => updateConf(checked === true && undefined, 'headerRender')"
+            @change="(checked: CheckedType) => updateConf(checked === true && undefined, 'headerRender')"
           />
         </a-col>
       </a-row>
@@ -71,7 +71,7 @@
             checked-children="开"
             un-checked-children="关"
             :checked="modelValue.footerRender === undefined"
-            @change="(checked: boolean) => updateConf(checked === true && undefined, 'footerRender')"
+            @change="(checked: CheckedType) => updateConf(checked === true && undefined, 'footerRender')"
           />
         </a-col>
       </a-row>
@@ -83,7 +83,7 @@
             checked-children="开"
             un-checked-children="关"
             :checked="modelValue.menu === undefined"
-            @change="(checked: boolean) => updateConf(checked === true && undefined, 'menu')"
+            @change="(checked: CheckedType) => updateConf(checked === true && undefined, 'menu')"
           />
         </a-col>
       </a-row>
@@ -94,7 +94,7 @@
             checked-children="开"
             un-checked-children="关"
             :checked="modelValue.menuHeaderRender === undefined"
-            @change="(checked: boolean) => updateConf(checked === true && undefined, 'menuHeaderRender')"
+            @change="(checked: CheckedType) => updateConf(checked === true && undefined, 'menuHeaderRender')"
           />
         </a-col>
       </a-row>
@@ -105,6 +105,7 @@
 <script setup lang="ts">
 import { SettingOutlined, CloseOutlined } from '@ant-design/icons-vue';
 
+type CheckedType = boolean | string | number;
 type ConfType = 'layout' | 'fixedHeader' | 'fixSiderbar' | string;
 
 const props = defineProps<{
