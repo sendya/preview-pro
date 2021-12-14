@@ -1,7 +1,7 @@
 lockfileVersion: 5.3
 
 specifiers:
-  '@ant-design-vue/pro-layout': ^3.1.7
+  '@ant-design-vue/pro-layout': ^3.1.9
   '@ant-design/icons-vue': ^6.0.1
   '@typescript-eslint/eslint-plugin': ^5.4.0
   '@typescript-eslint/parser': ^5.4.0
@@ -27,7 +27,7 @@ specifiers:
   vue-tsc: ^0.3.0
 
 dependencies:
-  '@ant-design-vue/pro-layout': 3.1.7_@vue+compiler-sfc@3.2.22
+  '@ant-design-vue/pro-layout': 3.1.9_@vue+compiler-sfc@3.2.22
   '@ant-design/icons-vue': 6.0.1_vue@3.2.22
   ant-design-vue: 2.2.8_d993d7eb47a5c30940fe6565e4c82216
   vue: 3.2.22
@@ -56,8 +56,8 @@ devDependencies:
 
 packages:
 
-  /@ant-design-vue/pro-layout/3.1.7_@vue+compiler-sfc@3.2.22:
-    resolution: {integrity: sha512-nNq4DKgnZJr8fTvw/UVsg65+PnelYLRhuWCDIDZosXE+Dcfe24WD29n4Efi2GurebYYWgE6TAHt9FFWf/Xp6CQ==}
+  /@ant-design-vue/pro-layout/3.1.9_@vue+compiler-sfc@3.2.22:
+    resolution: {integrity: sha512-7qmvhJjPTv/cT4mVkufJYCX2Hi5Alc5/Na5CTnJjzaO59H1YNZIrMtN2r7SU8SUciJzDp0cBLgRJw5SIhBW/TA==}
     dependencies:
       ant-design-vue: 2.2.8_d993d7eb47a5c30940fe6565e4c82216
       lodash-es: 4.17.21

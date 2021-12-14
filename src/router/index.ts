@@ -40,6 +40,13 @@ export default createRouter({
               meta: { title: '二级页面' },
               component: () => import('../views/admins/page1.vue'),
             },
+            {
+              path: 'dynamic-match/:id(\\d+)',
+              name: 'dynamic-match',
+              // 路由 path 默认参数再 meta.params 里
+              meta: { title: '动态参数页面', params: { id: 1 } },
+              component: () => import('../views/admins/dynamic-match.vue'),
+            },
           ],
         },
         {

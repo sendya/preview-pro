@@ -12,7 +12,7 @@
     "prettier": "prettier -c --write 'src/**/*'"
   },
   "dependencies": {
-    "@ant-design-vue/pro-layout": "^3.1.7",
+    "@ant-design-vue/pro-layout": "^3.1.9",
     "@ant-design/icons-vue": "^6.0.1",
     "ant-design-vue": "^2.2.8",
     "vue": "^3.2.22",
@@ -60,6 +60,7 @@
         "ant-design-vue/es/dropdown/style",
         "ant-design-vue/es/menu/style",
         "ant-design-vue/es/message/style",
+        "ant-design-vue/es/pagination/style",
         "ant-design-vue/es/radio/style",
         "ant-design-vue/es/result/style",
         "ant-design-vue/es/row/style",
