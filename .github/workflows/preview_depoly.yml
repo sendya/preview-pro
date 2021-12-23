@@ -11,7 +11,7 @@ jobs:
   setup:
     runs-on: ubuntu-latest
 
-    build:
+    steps:
       - uses: actions/checkout@v2
 
       - name: Cache pnpm modules
@@ -30,11 +30,11 @@ jobs:
       - name: build
         run: pnpm build:ghpages
 
-    deploy:
-      - uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_branch: gh-pages
-          publish_dir: ./dist
-          full_commit_message: ${{ github.event.head_commit.message }}
-          allow_empty_commit: true
+  deploy:
+    - uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_branch: gh-pages
+        publish_dir: ./dist
+        full_commit_message: ${{ github.event.head_commit.message }}
+        allow_empty_commit: true
