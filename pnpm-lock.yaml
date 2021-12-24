@@ -1,7 +1,7 @@
 lockfileVersion: 5.3
 
 specifiers:
-  '@ant-design-vue/pro-layout': ^3.1.9
+  '@ant-design-vue/pro-layout': ^3.1.12
   '@ant-design/icons-vue': ^6.0.1
   '@typescript-eslint/eslint-plugin': ^5.4.0
   '@typescript-eslint/parser': ^5.4.0
@@ -15,6 +15,7 @@ specifiers:
   eslint-plugin-prettier: ^4.0.0
   eslint-plugin-vue: ^8.1.1
   less: ^4.1.2
+  moment: ^2.29.1
   prettier: ^2.5.0
   typescript: ^4.5.2
   unplugin-auto-import: ^0.5.3
@@ -27,9 +28,10 @@ specifiers:
   vue-tsc: ^0.3.0
 
 dependencies:
-  '@ant-design-vue/pro-layout': 3.1.9_@vue+compiler-sfc@3.2.22
+  '@ant-design-vue/pro-layout': 3.1.12_@vue+compiler-sfc@3.2.22
   '@ant-design/icons-vue': 6.0.1_vue@3.2.22
   ant-design-vue: 2.2.8_d993d7eb47a5c30940fe6565e4c82216
+  moment: 2.29.1
   vue: 3.2.22
   vue-router: 4.0.12_vue@3.2.22
 
@@ -56,8 +58,8 @@ devDependencies:
 
 packages:
 
-  /@ant-design-vue/pro-layout/3.1.9_@vue+compiler-sfc@3.2.22:
-    resolution: {integrity: sha512-7qmvhJjPTv/cT4mVkufJYCX2Hi5Alc5/Na5CTnJjzaO59H1YNZIrMtN2r7SU8SUciJzDp0cBLgRJw5SIhBW/TA==}
+  /@ant-design-vue/pro-layout/3.1.12_@vue+compiler-sfc@3.2.22:
+    resolution: {integrity: sha512-Hf7msL3tjHPs5NaxRk6f4iERHXbcRGsCIOeFFyix10yySZ6GclPX8ZNSxM3d1RRhDii9ZUVaDc89BtoG4Oz6ew==}
     dependencies:
       ant-design-vue: 2.2.8_d993d7eb47a5c30940fe6565e4c82216
       lodash-es: 4.17.21

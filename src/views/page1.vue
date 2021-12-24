@@ -15,7 +15,6 @@
 </template>
 
 <script lang="ts" setup>
-import 'ant-design-vue/es/message/style';
 import { message } from 'ant-design-vue';
 
 const handleClick = () => {
