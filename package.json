@@ -12,7 +12,7 @@
     "prettier": "prettier -c --write 'src/**/*'"
   },
   "dependencies": {
-    "@ant-design-vue/pro-layout": "^3.1.12",
+    "@ant-design-vue/pro-layout": "^3.1.13",
     "@ant-design/icons-vue": "^6.0.1",
     "ant-design-vue": "^2.2.8",
     "moment": "^2.29.1",
