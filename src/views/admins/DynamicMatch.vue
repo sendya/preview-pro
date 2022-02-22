@@ -36,7 +36,7 @@
       <a-divider />
       <a-pagination
         :current="currentId"
-        :total="currentId * 20"
+        :total="total"
         show-less-items
         @change="handlePageChange"
       />
@@ -52,6 +52,13 @@ const route = useRoute();
 const router = useRouter();
 
 const currentId = computed(() => Number.parseInt(route.params.id as string, 10));
+const total = computed(() => {
+  const v = currentId.value * 20;
+  if (v >= Number.MAX_SAFE_INTEGER) {
+    return Number.MAX_SAFE_INTEGER;
+  }
+  return v;
+});
 
 const next = () => {
   router.push({
@@ -65,7 +72,7 @@ const prev = () => {
     params: { id: currentId.value > 1 ? currentId.value - 1 : 1 },
   });
 };
-const handlePageChange = (currentPage: number, pageSize: number) => {
+const handlePageChange = (currentPage: number) => {
   router.push({
     name: 'dynamic-match',
     params: { id: currentPage },

@@ -15,7 +15,7 @@
       </router-link>
     </template>
     <template #rightContentRender>
-      <RightContent />
+      <RightContent :current-user="currentUser" />
     </template>
     <!-- custom breadcrumb itemRender  -->
     <template #breadcrumbRender="{ route, params, routes }">
@@ -29,7 +29,11 @@
       </router-link>
     </template>
     <setting-drawer v-model="proConfig" />
-    <router-view />
+    <router-view v-slot="{ Component, route }">
+      <transition name="zoom" mode="out-in">
+        <component :is="Component" :key="route.path" />
+      </transition>
+    </router-view>
     <template #footerRender>
       <GlobalFooter
         :links="[
@@ -43,12 +47,11 @@
 </template>
 
 <script setup lang="ts">
-import { reactive, watchEffect, computed } from 'vue';
 import { useRouter, RouterLink } from 'vue-router';
 import { GlobalFooter, getMenuData, clearMenuItem } from '@ant-design-vue/pro-layout';
 import type { RouteContextProps } from '@ant-design-vue/pro-layout';
 import { SmileOutlined, HeartOutlined } from '@ant-design/icons-vue';
-import RightContent from '../components/RightContent/index.vue';
+import RightContent from '../components/RightContent/RightContent.vue';
 
 const router = useRouter();
 const { menuData } = getMenuData(clearMenuItem(router.getRoutes()));
@@ -76,15 +79,22 @@ const breadcrumb = computed(() =>
     };
   }),
 );
+const currentUser = reactive({
+  nickname: 'Admin',
+  avatar: 'A',
+});
 
-watchEffect(() => {
-  if (router.currentRoute) {
-    console.log('router', router.currentRoute.value);
+watch(
+  router.currentRoute,
+  () => {
     const matched = router.currentRoute.value.matched.concat();
     state.selectedKeys = matched.filter(r => r.name !== 'index').map(r => r.path);
     state.openKeys = matched
       .filter(r => r.path !== router.currentRoute.value.path)
       .map(r => r.path);
-  }
-});
+  },
+  {
+    immediate: true,
+  },
+);
 </script>

@@ -1,8 +1,2 @@
-node_modules/
-**/*.spec.*
-**/style/
-*.html
-src/icons
-vite.config.ts
-components.d.ts
-auto-imports.d.ts
+src/auto-imports.d.ts
+src/components.d.ts

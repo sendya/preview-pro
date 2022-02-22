@@ -21,7 +21,9 @@
       </a-breadcrumb>
       <div :style="{ background: '#fff', padding: '24px', minHeight: '280px' }">Content</div>
     </a-layout-content>
-    <a-layout-footer style="text-align: center">Ant Design ©2018 Created by Ant UED</a-layout-footer>
+    <a-layout-footer style="text-align: center">
+      Ant Design ©2018 Created by Ant UED
+    </a-layout-footer>
   </a-layout>
 </template>
 
@@ -47,7 +49,7 @@ const selectedKeys = ref<string[]>(['2']);
   margin: 16px 0 16px 24px;
 }
 
-[data-theme="dark"] .site-layout-content {
+[data-theme='dark'] .site-layout-content {
   background: #141414;
 }
 </style>

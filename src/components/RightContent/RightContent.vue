@@ -21,6 +21,7 @@
         <template #icon>
           <UserOutlined />
         </template>
+        {{ currentUser.nickname }}
       </a-avatar>
     </a-dropdown>
   </div>
@@ -28,4 +29,13 @@
 
 <script setup lang="ts">
 import { UserOutlined, SettingOutlined, LogoutOutlined } from '@ant-design/icons-vue';
+
+export type CurrentUser = {
+  nickname: string;
+  avatar?: string;
+};
+
+defineProps<{
+  currentUser: CurrentUser;
+}>();
 </script>
