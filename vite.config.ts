@@ -39,7 +39,7 @@ export default defineConfig({
         // DO NOT REMOVE THIS LINE
         javascriptEnabled: true,
         modifyVars: {
-          hack: `true; @import 'ant-design-vue/es/style/themes/default.less'`, // dark.less
+          // hack: `true; @import 'ant-design-vue/es/style/themes/default.less'`, // dark.less
           '@primary-color': '#52c41a', // 全局主色
         }
       },

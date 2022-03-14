@@ -12,18 +12,18 @@
     "prettier": "prettier -c --write 'src/**/*'"
   },
   "dependencies": {
-    "@ant-design-vue/pro-layout": "^3.1.13",
+    "@ant-design-vue/pro-layout": "^3.2.0-alpha.5",
     "@ant-design/icons-vue": "^6.0.1",
-    "ant-design-vue": "^2.2.8",
+    "ant-design-vue": "^3.0.0-alpha.16",
     "moment": "^2.29.1",
-    "vue": "^3.2.22",
+    "vue": "^3.2.31",
     "vue-router": "^4.0.11"
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^5.4.0",
     "@typescript-eslint/parser": "^5.4.0",
-    "@vitejs/plugin-vue": "^1.10.0",
-    "@vue/compiler-sfc": "^3.2.22",
+    "@vitejs/plugin-vue": "^2.2.4",
+    "@vue/compiler-sfc": "^3.2.31",
     "eslint": "^8.3.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-config-prettier": "^8.3.0",
@@ -35,7 +35,7 @@
     "typescript": "^4.5.2",
     "unplugin-auto-import": "^0.5.3",
     "unplugin-vue-components": "^0.17.6",
-    "vite": "^2.6.14",
+    "vite": "^2.8.6",
     "vite-plugin-optimize-persist": "^0.1.1",
     "vite-plugin-package-config": "^0.1.0",
     "vue-tsc": "^0.3.0"
