@@ -46,8 +46,8 @@
 </template>
 
 <script setup lang="ts">
-import { LikeOutlined } from '@ant-design/icons-vue';
-import { useRoute } from 'vue-router';
+import { LikeOutlined } from '@ant-design/icons-vue'
+import { useRoute } from 'vue-router'
 
-const route = useRoute();
+const route = useRoute()
 </script>

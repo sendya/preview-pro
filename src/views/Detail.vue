@@ -24,5 +24,5 @@
 </template>
 
 <script lang="ts" setup>
-const projectPkgs = window.PKG;
+const projectPkgs = window.PKG
 </script>

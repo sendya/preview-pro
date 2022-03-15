@@ -103,28 +103,28 @@
 </template>
 
 <script setup lang="ts">
-import { SettingOutlined, CloseOutlined } from '@ant-design/icons-vue';
+import { SettingOutlined, CloseOutlined } from '@ant-design/icons-vue'
 
-type ConfType = 'layout' | 'fixedHeader' | 'fixSiderbar' | string;
+type ConfType = 'layout' | 'fixedHeader' | 'fixSiderbar' | string
 
 const props = defineProps<{
-  modelValue: Record<string, any>;
-}>();
-const emit = defineEmits(['update:modelValue']);
+  modelValue: Record<string, string|boolean|undefined>
+}>()
+const emit = defineEmits(['update:modelValue'])
 
-const visible = ref<boolean>(false);
+const visible = ref<boolean>(false)
 const handleShowDrawer = () => {
-  visible.value = !visible.value;
-};
+  visible.value = !visible.value
+}
 
 const updateConf = (val: any, type: ConfType) => {
   const newVal = {
     ...toRaw(props.modelValue),
     [`${type}`]: val,
-  };
-  console.log('newConf', newVal);
-  emit('update:modelValue', newVal);
-};
+  }
+  console.log('newConf', newVal)
+  emit('update:modelValue', newVal)
+}
 </script>
 
 <style lang="less">
