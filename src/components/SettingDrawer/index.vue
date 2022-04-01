@@ -108,7 +108,7 @@ import { SettingOutlined, CloseOutlined } from '@ant-design/icons-vue'
 type ConfType = 'layout' | 'fixedHeader' | 'fixSiderbar' | string
 
 const props = defineProps<{
-  modelValue: Record<string, string|boolean|undefined>
+  modelValue: Record<string, string | boolean | undefined>
 }>()
 const emit = defineEmits(['update:modelValue'])
 

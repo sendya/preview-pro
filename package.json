@@ -13,9 +13,9 @@
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore"
   },
   "dependencies": {
-    "@ant-design-vue/pro-layout": "^3.2.0-rc.0",
+    "@ant-design-vue/pro-layout": "^3.2.0-rc.5",
     "@ant-design/icons-vue": "^6.0.1",
-    "ant-design-vue": "^3.1.0-rc.0",
+    "ant-design-vue": "^3.1.0-rc.5",
     "vue": "^3.2.31",
     "vue-router": "^4.0.11"
   },
@@ -73,6 +73,8 @@
         "ant-design-vue/es/style",
         "ant-design-vue/es/switch/style",
         "ant-design-vue/es/tag/style",
+        "ant-design-vue/es/transfer/style",
+        "ant-design-vue/es/tree/style",
         "ant-design-vue/es/typography/style",
         "vue",
         "vue-router"
