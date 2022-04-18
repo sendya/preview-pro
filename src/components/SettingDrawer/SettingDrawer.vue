@@ -8,10 +8,7 @@
     </template>
     <div class="margin-bottom: 24px">
       <h3>导航模式</h3>
-      <a-radio-group
-        :value="modelValue.layout"
-        @change="({ target }: { target: HTMLInputElement }) => updateConf(target.value, 'layout')"
-      >
+      <a-radio-group :value="modelValue.layout" @change="e => updateConf(e.target.value, 'layout')">
         <a-radio value="side">左侧菜单布局</a-radio>
         <a-radio value="top">顶部菜单布局</a-radio>
         <a-radio value="mix">混合菜单布局</a-radio>
@@ -103,28 +100,29 @@
 </template>
 
 <script setup lang="ts">
-import { SettingOutlined, CloseOutlined } from '@ant-design/icons-vue'
+import { SettingOutlined, CloseOutlined } from '@ant-design/icons-vue';
+import type { CheckedType } from 'ant-design-vue/es/switch';
 
-type ConfType = 'layout' | 'fixedHeader' | 'fixSiderbar' | string
+type ConfType = 'layout' | 'fixedHeader' | 'fixSiderbar' | string;
 
 const props = defineProps<{
-  modelValue: Record<string, string|boolean|undefined>
-}>()
-const emit = defineEmits(['update:modelValue'])
+  modelValue: Record<string, string | boolean | undefined>;
+}>();
+const emit = defineEmits(['update:modelValue']);
 
-const visible = ref<boolean>(false)
+const visible = ref<boolean>(false);
 const handleShowDrawer = () => {
-  visible.value = !visible.value
-}
+  visible.value = !visible.value;
+};
 
-const updateConf = (val: any, type: ConfType) => {
+const updateConf = (val: string | CheckedType | undefined, type: ConfType) => {
   const newVal = {
     ...toRaw(props.modelValue),
     [`${type}`]: val,
-  }
-  console.log('newConf', newVal)
-  emit('update:modelValue', newVal)
-}
+  };
+  console.log('newConf', newVal);
+  emit('update:modelValue', newVal);
+};
 </script>
 
 <style lang="less">

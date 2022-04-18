@@ -28,14 +28,14 @@
 </template>
 
 <script setup lang="ts">
-import { UserOutlined, SettingOutlined, LogoutOutlined } from '@ant-design/icons-vue'
+import { UserOutlined, SettingOutlined, LogoutOutlined } from '@ant-design/icons-vue';
 
 export type CurrentUser = {
-  nickname: string
-  avatar?: string
-}
+  nickname: string;
+  avatar?: string;
+};
 
 defineProps<{
-  currentUser: CurrentUser
-}>()
+  currentUser: CurrentUser;
+}>();
 </script>

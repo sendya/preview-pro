@@ -14,7 +14,7 @@
       <a-tag color="pink">Tag2</a-tag>
     </template>
     <a-card title="Project Version">
-      <p v-for="(dep, key) in projectPkgs" :key="key">
+      <p v-for="(dep, key) in dependencies" :key="key">
         <strong style="margin-right: 12px">{{ key }}:</strong>
         <a-tag>{{ dep }}</a-tag>
       </p>
@@ -24,5 +24,5 @@
 </template>
 
 <script lang="ts" setup>
-const projectPkgs = window.PKG
+import { dependencies } from '../../package.json';
 </script>

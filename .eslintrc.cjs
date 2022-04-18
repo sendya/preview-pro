@@ -1,5 +1,5 @@
 /* eslint-env node */
-require('@rushstack/eslint-patch/modern-module-resolution')
+require('@rushstack/eslint-patch/modern-module-resolution');
 
 module.exports = {
   root: true,
@@ -16,6 +16,6 @@ module.exports = {
   },
   rules: {
     // all rules docs https://eslint.org/docs/rules/
-    'prettier/prettier': ['error', { semi: false, singleQuote: true, printWidth: 120 }],
+    'prettier/prettier': ['error', { semi: true, singleQuote: true, printWidth: 120 }],
   },
-}
+};

@@ -21,7 +21,7 @@
 </template>
 
 <script lang="ts" setup>
-const selectedKeys = ref<string[]>(['2'])
+const selectedKeys = ref<string[]>(['2']);
 </script>
 
 <style scoped>

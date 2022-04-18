@@ -40,37 +40,37 @@
 </template>
 
 <script setup lang="ts">
-import { LikeOutlined } from '@ant-design/icons-vue'
-import { useRoute, useRouter } from 'vue-router'
+import { LikeOutlined } from '@ant-design/icons-vue';
+import { useRoute, useRouter } from 'vue-router';
 
-const route = useRoute()
-const router = useRouter()
+const route = useRoute();
+const router = useRouter();
 
-const currentId = computed(() => Number.parseInt(route.params.id as string, 10))
+const currentId = computed(() => Number.parseInt(route.params.id as string, 10));
 const total = computed(() => {
-  const v = currentId.value * 20
+  const v = currentId.value * 20;
   if (v >= Number.MAX_SAFE_INTEGER) {
-    return Number.MAX_SAFE_INTEGER
+    return Number.MAX_SAFE_INTEGER;
   }
-  return v
-})
+  return v;
+});
 
 const next = () => {
   router.push({
     name: 'dynamic-match',
     params: { id: currentId.value + 1 },
-  })
-}
+  });
+};
 const prev = () => {
   router.push({
     name: 'dynamic-match',
     params: { id: currentId.value > 1 ? currentId.value - 1 : 1 },
-  })
-}
+  });
+};
 const handlePageChange = (currentPage: number) => {
   router.push({
     name: 'dynamic-match',
     params: { id: currentPage },
-  })
-}
+  });
+};
 </script>
