@@ -3,6 +3,7 @@
     v-model:collapsed="state.collapsed"
     v-model:selectedKeys="state.selectedKeys"
     v-model:openKeys="state.openKeys"
+    :loading="loading"
     :menu-data="menuData"
     :breadcrumb="{ routes: breadcrumb }"
     disable-content-margin
@@ -31,16 +32,16 @@
       </router-link>
     </template>
     <SettingDrawer v-model="proConfig" />
-    <router-view v-slot="{ Component, route }">
+    <RouterView v-slot="{ Component, route }">
       <transition name="slide-left" mode="out-in">
         <component :is="Component" :key="route.path" />
       </transition>
-    </router-view>
+    </RouterView>
   </pro-layout>
 </template>
 
 <script setup lang="ts">
-import { useRouter, RouterLink } from 'vue-router';
+import { useRouter, RouterView, RouterLink, onBeforeRouteLeave, onBeforeRouteUpdate } from 'vue-router';
 import { getMenuData, clearMenuItem, type RouteContextProps } from '@ant-design-vue/pro-layout';
 import { SmileOutlined, HeartOutlined } from '@ant-design/icons-vue';
 
@@ -52,8 +53,10 @@ const state = reactive<Omit<RouteContextProps, 'menuData'>>({
   openKeys: [], // defualt openKeys
   selectedKeys: [], // default selectedKeys
 });
+const loading = ref(false);
 const proConfig = ref({
   layout: 'side',
+  navTheme: 'light',
   fixedHeader: true,
   fixSiderbar: true,
   splitMenus: true,

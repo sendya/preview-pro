@@ -11,6 +11,10 @@
   height: 100%;
 }
 
+.ant-pro-sider {
+  z-index: 20;
+}
+
 .slide-left-enter-active,
 .slide-left-leave-active,
 .slide-right-enter-active,
