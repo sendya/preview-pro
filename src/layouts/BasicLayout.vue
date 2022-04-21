@@ -41,7 +41,7 @@
 </template>
 
 <script setup lang="ts">
-import { useRouter, RouterView, RouterLink, onBeforeRouteLeave, onBeforeRouteUpdate } from 'vue-router';
+import { useRouter, RouterView, RouterLink } from 'vue-router';
 import { getMenuData, clearMenuItem, type RouteContextProps } from '@ant-design-vue/pro-layout';
 import { SmileOutlined, HeartOutlined } from '@ant-design/icons-vue';
 
