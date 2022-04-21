@@ -31,8 +31,7 @@ export default defineConfig({
       extensions: ['vue', 'tsx'],
       resolvers: [
         AntDesignVueResolver({
-          importStyle: 'less',
-          importLess: true,
+          importStyle: false,
         }),
       ],
     }),
@@ -50,8 +49,8 @@ export default defineConfig({
         // DO NOT REMOVE THIS LINE
         javascriptEnabled: true,
         modifyVars: {
-          // hack: `true; @import 'ant-design-vue/es/style/themes/default.less'`, // dark.less
-          '@primary-color': '#eb2f96', // 全局主色
+          // hack: `true; @import 'ant-design-vue/dist/antd.variable.less'`,
+          // '@primary-color': '#eb2f96', // 全局主色
         },
       },
     },

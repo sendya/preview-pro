@@ -1,10 +1,15 @@
 <template>
-  <a-config-provider>
+  <ConfigProvider>
     <router-view />
-  </a-config-provider>
+  </ConfigProvider>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { ConfigProvider } from 'ant-design-vue';
+import { useUserTheme } from './hooks/useTheme';
+
+useUserTheme();
+</script>
 
 <style>
 #app {

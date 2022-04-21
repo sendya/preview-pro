@@ -1,7 +1,7 @@
 lockfileVersion: 5.3
 
 specifiers:
-  '@ant-design-vue/pro-layout': ^3.2.0
+  '@ant-design-vue/pro-layout': ^3.2.1
   '@ant-design/icons-vue': ^6.1.0
   '@rushstack/eslint-patch': ^1.1.3
   '@vitejs/plugin-vue': ^2.3.1
@@ -26,7 +26,7 @@ specifiers:
   vue-tsc: ^0.34.6
 
 dependencies:
-  '@ant-design-vue/pro-layout': 3.2.0
+  '@ant-design-vue/pro-layout': 3.2.1
   '@ant-design/icons-vue': 6.1.0_vue@3.2.33
   ant-design-vue: 3.2.0_vue@3.2.33
   vue: 3.2.33
@@ -61,8 +61,8 @@ packages:
       '@jridgewell/trace-mapping': 0.3.4
     dev: true
 
-  /@ant-design-vue/pro-layout/3.2.0:
-    resolution: {integrity: sha512-88uLFQgrv/FLvQYa4IuzU1WIU5A7vqW5MIG1ilj7+ke6pzztldfzvcSmpXP8IRJF6t+xADcujNffbG/MygElPg==}
+  /@ant-design-vue/pro-layout/3.2.1:
+    resolution: {integrity: sha512-Jh9WAb/2SSUCk8iOW8+b/zGx+XoO82t/EIJr3P4zQK/+U7tNIXKV95synCadWVEqBiwcYcyPDNwCdv0biMIU1Q==}
     dependencies:
       '@ant-design/icons-vue': 6.1.0_vue@3.2.33
       ant-design-vue: 3.2.0_vue@3.2.33

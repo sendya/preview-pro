@@ -138,7 +138,7 @@ const updateConf = (val: string | CheckedType | undefined, type: ConfType) => {
   height: 48px;
   font-size: 16px;
   text-align: center;
-  background: @primary-color;
+  background: var(--primary-color);
   border-radius: 4px 0 0 4px;
   cursor: pointer;
   pointer-events: auto;
