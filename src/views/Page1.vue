@@ -1,5 +1,5 @@
 <template>
-  <PageContainer ghost>
+  <PageContainer>
     <a-result
       status="404"
       :style="{
